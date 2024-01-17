@@ -23,6 +23,7 @@
         <div class='container'>
             <h1><a href="index.php">Akupuntur</a></h1>
             <ul>
+                <li><a href="login.php">Admin</a></li>
                 <li><a href="produk.php">Produk</a></li>
             </ul>
         </div>

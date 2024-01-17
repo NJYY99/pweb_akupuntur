@@ -19,7 +19,11 @@
         <div class='container'>
             <h1><a href="index.php">Akupuntur</a></h1>
             <ul>
+                <li><a href="login.php">Admin</a></li>
                 <li><a href="produk.php">Produk</a></li>
+                <li><a href="testimoni.php">Testimoni</a></li>
+                <li><a href="about.php">About Us</a></li>
+                <li><a href="aboutME.php">About ME</a></li>
             </ul>
         </div>
     </header>
@@ -34,7 +38,7 @@
             </form>
         </div>
     </div>
-
+    
     <!-- CATEGORY -->
     <div class="section">
         <div class="container">

@@ -1,5 +1,4 @@
 <?php
-    error_reporting(0);
     include 'db.php';
     $kontak = mysqli_query($conn, "SELECT admin_telp, admin_email, admin_address FROM tb_admin WHERE admin_id = 1");
     $a = mysqli_fetch_object($kontak);
@@ -34,41 +33,40 @@
     <div class="search">
         <div class="container">
             <form action="produk.php">
-                <input type="text" name="search" placeholder="Cari Produk" value="<?php echo $_GET['search'] ?>">
-                
-                <input type="hidden" name="kat" value="<?php echo $_GET['kat'] ?>">
+                <input type="text" name="search" placeholder="Cari Produk">
                 <input type="submit" name="cari" value="Cari Produk">
             </form>
         </div>
     </div>
     
-    <!-- NEW PRODUCT -->
-    <div class="section">
+    <!-- ABOUT US -->
+    <div class="about-heading">
+        <h1>About Us</h1>
+        <p>Harmoni Sehat, Terapi Akupunktur Sejahtera: Temukan Keseimbangan Energi untuk Hidup yang Berkualitas</p>
         <div class="container">
-            <h3>Produk</h3>
-            <div class="box">
-                <?php
-                    if($_GET['search'] != '' || $_GET['kat'] != '') {
-                        $where = "AND product_name LIKE '%".$_GET['search']."%' AND category_id LIKE '%".$_GET['kat']."%'  ";
-                    }
-
-                    $produk = mysqli_query($conn, "SELECT * FROM tb_product  WHERE product_status = 1 $where ORDER BY product_id DESC");
-                    if(mysqli_num_rows($produk) > 0) {
-                        while($p = mysqli_fetch_array($produk)) {
-                ?>
-                    <a href="detail-produk.php?id=<?php echo $p['product_id'] ?>">
-                        <div class="col-4">
-                            <img src="produk/<?php echo $p['product_image'] ?>">
-                            <p class="nama"><?php echo substr($p['product_name'], 0,30) ?></p>
-                            <p class="harga">Rp. <?php echo number_format($p['product_price']) ?></p>
-                        </div>
-                    </a>
-                <?php }}else{ ?>
-                    <p>Produk/Praktik Tidak Tersedia</p>
-                <?php } ?>
+            <div class="about">
+                <div class="about-vidio">
+                    <iframe width="560" 
+                        height="315" src="https://www.youtube.com/embed/XKBlQqvaAD4?si=SHDdRsAY_UtlfT_q" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="about-content">
+                    <h2>Kesehatan berada Di Depan Mata</h2>
+                    <p>Selamat datang di Klinik Akupuntur Sejahtera, tempat di mana keharmonisan kesehatan dan 
+                        kesejahteraan terwujud. Kami berkomitmen untuk memberikan pengalaman terapi akupunktur berkualitas tinggi, 
+                        menggabungkan kearifan tradisional dengan pendekatan ilmiah modern. Tim kami terdiri dari praktisi akupunktur 
+                        berpengalaman yang siap membimbing Anda menuju keseimbangan energi tubuh dan meningkatkan kualitas hidup.
+                    </p>
+                </div>
             </div>
         </div>
+            
     </div>
+
 
     <!-- FOOTER -->
     <div class="footer">
